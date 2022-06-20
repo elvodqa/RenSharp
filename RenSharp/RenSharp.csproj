@@ -51,5 +51,6 @@
     </ItemGroup>
     <ItemGroup>
       <PackageReference Include="ppy.SDL2-CS" Version="1.0.565-alpha" />
+      <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
     </ItemGroup>
 </Project>

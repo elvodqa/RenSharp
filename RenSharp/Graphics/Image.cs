@@ -6,8 +6,28 @@ namespace RenSharp.Graphics;
 public class Image : IDisposable
 {
     public IntPtr Handle { get; set; }
-    public Vector2i Size { get; set; } = new Vector2i(100, 100);
-    public Vector2i Position { get; set; } = new Vector2i(0, 0);
+    public Vector2i Size 
+    {
+        get { return new Vector2i(Rect.w, Rect.h); }
+       
+        set
+        {
+            Rect.w = value.X;
+            Rect.h = value.Y;
+        }
+    }
+    public Vector2i Position 
+    { 
+        get
+        {
+            return new Vector2i(Rect.x, Rect.y);
+        }
+        set
+        {
+            Rect.x = value.X;
+            Rect.y = value.Y;
+        }
+    }
     private SDL.SDL_Rect Rect;
    
     
@@ -19,6 +39,9 @@ public class Image : IDisposable
     /// <param name="ImageName"></param>
     public Image(string ImageName)
     {
+        System.Drawing.Image? img = System.Drawing.Image.FromFile(@"Resources/Images/" + ImageName);
+        Position = new Vector2i(0, 0);
+        Size = new Vector2i(img.Width, img.Height);
         Handle = SDL_image.IMG_LoadTexture(Core.Renderer, "Resources/Images/" + ImageName);
         Rect.x = Position.X;
         Rect.y = Position.Y;

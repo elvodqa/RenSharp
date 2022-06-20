@@ -33,14 +33,16 @@ public class RenSharpGame
             Core.Window, 
             -1, 
             SDL.SDL_RendererFlags.SDL_RENDERER_ACCELERATED);
-        
+
         if (Core.Renderer == IntPtr.Zero)
         {
             Console.WriteLine($"There was an issue creating the renderer. {SDL.SDL_GetError()}");
         }
 
-        yarra = new Text("This is a test text please work");
+        yarra = new Text("Making you dive headfirst into literature when you're not accustomed to it..." +
+            "Making you dive headfirst into literature when you're not accustomed to it...");
         peppy = new Image("peppy.png");
+       
         running = true;
     }
     
