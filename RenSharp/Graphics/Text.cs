@@ -44,7 +44,7 @@ public class Text : IDisposable
         MessageRect.y = 0;
         MessageRect.w = 750;
             //(int)Size * TextString.Length / 3; 
-        MessageRect.h = (int)Size * 10; 
+        MessageRect.h = (int)Size * ((TextString.Length / 70) * 5); 
     }
 
     public void Draw()

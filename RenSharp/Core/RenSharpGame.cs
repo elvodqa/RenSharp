@@ -40,7 +40,10 @@ public class RenSharpGame
         }
 
         yarra = new Text("Making you dive headfirst into literature when you're not accustomed to it..." +
-            "Making you dive headfirst into literature when you're not accustomed to it...");
+            "Making you dive headfirst into literature when you're not accustomed to it... " +
+            "Making you dive headfirst into literature when you're not accustomed to it... " +
+            "Making you dive headfirst into literature when you're not accustomed to it... "
+            );
         peppy = new Image("peppy.png");
        
         running = true;
