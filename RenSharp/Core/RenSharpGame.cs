@@ -7,6 +7,7 @@ public class RenSharpGame
 {
     private bool running = false;
     private Image peppy;
+    private Text yarra;
     
     public RenSharpGame()
     {
@@ -38,6 +39,7 @@ public class RenSharpGame
             Console.WriteLine($"There was an issue creating the renderer. {SDL.SDL_GetError()}");
         }
 
+        yarra = new Text("This is a test text please work");
         peppy = new Image("peppy.png");
         running = true;
     }
@@ -50,10 +52,10 @@ public class RenSharpGame
         SDL.SDL_SetRenderDrawColor(Core.Renderer, 38, 35, 33, 255);
         SDL.SDL_RenderClear(Core.Renderer);
         
-        
+       
         peppy.Render();
         
-        
+        yarra.Draw();
         SDL.SDL_RenderPresent(Core.Renderer);
     }
 
