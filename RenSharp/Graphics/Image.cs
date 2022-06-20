@@ -39,7 +39,9 @@ public class Image : IDisposable
     /// <param name="ImageName"></param>
     public Image(string ImageName)
     {
-        System.Drawing.Image? img = System.Drawing.Image.FromFile(@"Resources/Images/" + ImageName);
+        
+        //System.Drawing.Image? img = System.Drawing.Image.FromFile(@"Resources/Images/" + ImageName);
+        var img = SixLabors.ImageSharp.Image.Load(@"Resources/Images/" + ImageName);
         Position = new Vector2i(0, 0);
         Size = new Vector2i(img.Width, img.Height);
         Handle = SDL_image.IMG_LoadTexture(Core.Renderer, "Resources/Images/" + ImageName);
